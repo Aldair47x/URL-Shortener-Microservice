@@ -1,5 +1,44 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+  h1.text-description-tittle1 API Basejump: URL Shortener Microservice
+  p
+    span(class="text-description-tittle") Made by aldair47x ~ 
+    span(class="text-yellow") Col
+    span(class="text-blue") om
+    span(class="text-red") bia
+
+  h1.text-description-tittle1 User stories:
+  div.container-fluid
+    div.row
+      .col-sm-6
+        p(class="text-description-tittle2")
+          span(class="text-red1") 1)
+          span  I can pass a URL as a parameter and I will receive a shortened URL in the JSON response.
+          br
+          span(class="text-red1") 2)
+          span  If I pass an invalid URL that doesn't follow the valid http://www.example.com format, the JSON response will contain an error instead.
+          br
+          span(class="text-red1") 3)
+          span  When I visit that shortened URL, it will redirect me to my original link.
+      
+  h1.text-description-tittle1 Example usage:
+  div.container-fluid
+    div.row
+      .col-sm-8
+        code https://aldair47x-urlshortener.herokuapp.com/new/https://www.google.com.co
+        br
+        code https://aldair47x-urlshortener.herokuapp.com/new/https://www.youtube.com
+  br
+  h1.text-description-tittle1 Example output:
+  div.container-fluid
+    div.row
+      .col-sm-6
+        code {"Source URL":"https://www.youtube.com","Final URL":"91"}
+  br
+  h1.text-description-tittle1 How to use your final URL:
+  div.container-fluid
+    div.row
+      .col-sm-6
+        code https://aldair47x-urlshortener.herokuapp.com/91
+
