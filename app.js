@@ -5,7 +5,7 @@ var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 var cors = require('cors');
 var shortUrl = require('./model/shortUrl');
-
+var url = process.env.MONGOLAB_URI;
 var index = require('./routes/index');
 
 var app = express();
@@ -18,12 +18,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(bodyParser.json());
 app.use(cors());
 app.use('/', index);
-
-
-
 //connect to db
 
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/shortUrls');
+mongoose.connect(url || 'mongodb://localhost/shortUrls');
 
 
 
