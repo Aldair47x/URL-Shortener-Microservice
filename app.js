@@ -7,7 +7,6 @@ var cors = require('cors');
 var shortUrl = require('./model/shortUrl');
 var url = process.env.MONGOLAB_URI;
 var index = require('./routes/index');
-
 var app = express();
 
 // view engine setup
@@ -20,7 +19,7 @@ app.use(cors());
 app.use('/', index);
 //connect to db
 
-mongoose.connect(url || 'mongodb://localhost/shortUrls');
+mongoose.connect(url || 'mongodb://localhost/shortUrls' || MONGOLAB_URI);
 
 
 
