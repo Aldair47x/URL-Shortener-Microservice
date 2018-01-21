@@ -16,19 +16,15 @@ router.get('/new/:url(*)',function(req,res,next) {
   if(regex.test(url)==true)
   {
     var short = Math.floor(Math.random()*10000).toString();
-    var data = new shortUrl({
-
-      sourceURL : url,
-      finalURL : short
-
-    });
-
-    data.save(err => {
+    var newUser = new shortUrl();
+    newUser.sourceURL = url;
+    newUser.finalURL = short;
+    newUser.save(err => {
       if(err){
         return res.send('Error saving to db');
       }
     });
-    return res.json({'Source URL':data.sourceURL, 'Final URL':data.finalURL});
+    return res.json({'Source URL':newUser.sourceURL, 'Final URL':newUser.finalURL});
   }
   else
   {
@@ -40,18 +36,8 @@ router.get('/:urls',(req,res,next) => {
   var shorterUrl = req.params.urls;
   shortUrl.findOne({'finalURL': shorterUrl}, (err, data) => {
     if(err) return res.send('Error reading db');
-    res.json({data});
-    /*
-    var re = new RegExp("^(http|https)://","i");
-    var strToCheck = data.sourceURL;
-    if(re.test(strToCheck))
-    {
-      res.redirect(301,data.sourceURL);
-    }
-    else{
-      res.redirect(301,'http://' + data.sourceURL);
-    }
-    */
+    var newUrl=data.sourceURL;
+    res.redirect(newUrl);
   });
 });
 
