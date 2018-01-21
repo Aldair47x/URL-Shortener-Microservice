@@ -20,7 +20,7 @@ app.use(cors());
 app.use('/', index);
 //connect to db
 
-mongoose.connect(url || 'mongodb://localhost/shortUrls');
+mongoose.connect('mongodb://heroku_qg2qch4m:70u26trgp2t7e64c8gln8td4rb@ds263707.mlab.com:63707/heroku_qg2qch4m' || 'mongodb://localhost/shortUrls');
 
 
 
