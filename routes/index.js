@@ -40,6 +40,8 @@ router.get('/:urls',(req,res,next) => {
   var shorterUrl = req.params.urls;
   shortUrl.findOne({'finalURL': shorterUrl}, (err, data) => {
     if(err) return res.send('Error reading db');
+    res.json({data});
+    /*
     var re = new RegExp("^(http|https)://","i");
     var strToCheck = data.sourceURL;
     if(re.test(strToCheck))
@@ -49,6 +51,7 @@ router.get('/:urls',(req,res,next) => {
     else{
       res.redirect(301,'http://' + data.sourceURL);
     }
+    */
   });
 });
 
