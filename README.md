@@ -14,7 +14,7 @@
 
 <h2>The Final Product! </h2>
 
-<p>This web application has been deployed to Heroku, and you can see it live here! https://aldair47x-rhpm.herokuapp.com/ </p>
+<p>This web application has been deployed to Heroku, and you can see it live here! https://aldair47x-urlshortener.herokuapp.com/ </p>
 
 
 
