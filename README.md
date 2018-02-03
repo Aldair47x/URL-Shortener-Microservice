@@ -1,4 +1,4 @@
-<h1>URL-Shortener-Microservice</h1>
+<h1>URL Shortener Microservice</h1>
 
 <h2>RESTful API</h2>
 
